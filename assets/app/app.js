@@ -48,21 +48,22 @@ const games = [
 
 const mainContent = document.querySelector('.main_content');
 const navMenu = document.querySelector('.nav_menu');
-const button = document.getElementById('button');
+const buttonActiveMenu = document.getElementById('button');
 const nuvToggleButton = document.querySelector('.nav_toggle_button');
 
-// add Li elements
-window.addEventListener('DOMContentLoaded', function() {
-    games.forEach(addLi);
-}); 
-// add main content
-window.addEventListener('DOMContentLoaded', function() {
-    games.forEach(addRules);
-}); 
+// added Li elements and main content
+window.addEventListener('DOMContentLoaded', initPage(games));
+
+function initPage(tables) {
+    tables.forEach(addLi);    
+    tables.forEach(addRules);
+}; 
+
+
 // active menu
 navMenu.addEventListener('click', sideMenu);
 // active button menu
-button.addEventListener('click', buttonMenu);
+buttonActiveMenu.addEventListener('click', buttonMenu);
 
 // Add listGame
 function addLi(game) {
